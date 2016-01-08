@@ -10,9 +10,11 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 
 gulp.task('default', ['copy-html', 'copy-images', 'copy-json', 'copy-framework', 'styles', 'lint', 'scripts'], function() {
-	gulp.watch('view/styles/**/*.scss', ['styles']);
-	gulp.watch('controller/**/*.js', ['lint', 'scripts-dist']);
-	gulp.watch('view/*.html', ['copy-html']);
+	gulp.watch('./view/styles/**/*.scss', ['styles']);
+	gulp.watch('./controller/**/*.js', ['lint', 'scripts-dist']);
+	gulp.watch('./view/*.html', ['copy-html']);
+	gulp.watch('./model/data/*.json', ['copy-json']);
+
 	gulp.watch('./dist/*.html').on('change', browserSync.reload);
 	gulp.watch('./dist/js/*.js').on('change', browserSync.reload);
 
@@ -24,18 +26,20 @@ gulp.task('default', ['copy-html', 'copy-images', 'copy-json', 'copy-framework',
 gulp.task('dist', [
 	'copy-html',
 	'copy-images',
+	'copy-json',
+	'copy-framework',
 	'styles',
 	'lint',
 	'scripts'
 ]);
 
 gulp.task('scripts', function() {
-	gulp.src('controller/**/*.js')
+	gulp.src('./controller/**/*.js')
 		.pipe(concat('all.js'))
 		.pipe(uglify({
 			mangle: false
 		}))
-		.pipe(gulp.dest('dist/js'));
+		.pipe(gulp.dest('./dist/js'));
 });
 
 gulp.task('copy-html', function() {
@@ -44,12 +48,12 @@ gulp.task('copy-html', function() {
 });
 
 gulp.task('copy-images', function() {
-	gulp.src('image/*')
+	gulp.src('./view/images/*')
 		.pipe(gulp.dest('./dist/img'));
 });
 
 gulp.task('copy-json', function() {
-	gulp.src('model/data/*.json')
+	gulp.src('./model/data/*.json')
 		.pipe(gulp.dest('./dist/js/data'));
 });
 
@@ -59,7 +63,7 @@ gulp.task('copy-framework', function(){
 });
 
 gulp.task('styles', function() {
-	gulp.src('view/styles/**/*.scss')
+	gulp.src('./view/styles/**/*.scss')
 		.pipe(sass({
 			outputStyle: 'compressed'
 		}).on('error', sass.logError))
@@ -71,7 +75,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('lint', function () {
-	return gulp.src(['controller/**/*.js'])
+	return gulp.src(['./controller/**/*.js'])
 		// eslint() attaches the lint output to the eslint property
 		// of the file object so it can be used by other modules.
 		.pipe(eslint())
