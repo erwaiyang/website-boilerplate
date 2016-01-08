@@ -1,0 +1,28 @@
+{
+  "name": "website-template",
+  "version": "0.1.0",
+  "description": "Erwai's website template. Gulp, sass, compass, susy, javascript, TDD/BDD, and more.",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erwaiyang/website-template.git"
+  },
+  "keywords": [
+    "gulp",
+    "sass",
+    "compass",
+    "susy",
+    "javascript",
+    "tdd",
+    "bdd"
+  ],
+  "author": "Erwai Yang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/erwaiyang/website-template/issues"
+  },
+  "homepage": "https://github.com/erwaiyang/website-template#readme"
+}

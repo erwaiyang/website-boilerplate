@@ -1,0 +1,16 @@
+### For Mac OS X ###
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+####################
+
+# node.js
+node_modules
+
+# dist
+dist
