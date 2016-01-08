@@ -13,5 +13,5 @@
 node_modules
 
 # dist
-dist/*.*
+dist
 !dist/*/.gitkeep
