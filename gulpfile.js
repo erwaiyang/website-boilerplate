@@ -11,7 +11,7 @@ var uglify = require('gulp-uglify');
 
 gulp.task('default', ['copy-html', 'copy-images', 'copy-json', 'copy-framework', 'styles', 'lint', 'scripts'], function() {
 	gulp.watch('view/styles/**/*.scss', ['styles']);
-	gulp.watch('controller/**/*.js', ['lint', 'scripts-dist']);
+	gulp.watch('controller/**/*.js', ['lint', 'scripts']);
 	gulp.watch('view/*.html', ['copy-html']);
 	gulp.watch('model/data/*.json', ['copy-json']);
 	gulp.watch('view/images/*.*', ['copy-images']);
