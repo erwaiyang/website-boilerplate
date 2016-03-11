@@ -1,14 +1,14 @@
 {
-  "name": "website-template",
+  "name": "website-boilerplate",
   "version": "0.1.0",
-  "description": "Erwai's website template. Gulp, sass, compass, susy, javascript, TDD/BDD, and more.",
+  "description": "Erwai's website boilerplate. Gulp, sass, compass, susy, javascript, TDD/BDD, and more.",
   "main": "index.js",
   "scripts": {
     "test": "gulp"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/erwaiyang/website-template.git"
+    "url": "git+https://github.com/erwaiyang/website-boilerplate.git"
   },
   "keywords": [
     "gulp",
@@ -22,9 +22,9 @@
   "author": "Erwai Yang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/erwaiyang/website-template/issues"
+    "url": "https://github.com/erwaiyang/website-boilerplate/issues"
   },
-  "homepage": "https://github.com/erwaiyang/website-template#readme",
+  "homepage": "https://github.com/erwaiyang/website-boilerplate#readme",
   "devDependencies": {
     "browser-sync": "^2.11.0",
     "gulp": "^3.9.0",
